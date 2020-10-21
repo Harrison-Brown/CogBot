@@ -1,14 +1,14 @@
 import discord
 from discord.ext import commands
 import config
-import cogs
-for x in commands.Cog.__subclasses__():
-    bot.add_cog(x(bot))
+import cogs`
 
 
 BOT_PREFIX = '!'
 
 bot = commands.Bot(command_prefix=BOT_PREFIX)
+for x in commands.Cog.__subclasses__():
+    bot.add_cog(x(bot))
 
 @bot.event
 async def on_message(message):
