@@ -3,10 +3,15 @@ from discord.ext import commands
 import config
 import cogs
 
+intents = discord.Intents.default()
+
+# Uncomment if using members priviledged intent
+# Allows for guild.members, etc.
+# intents.members = True
 
 BOT_PREFIX = '!'
 
-bot = commands.Bot(command_prefix=BOT_PREFIX)
+bot = commands.Bot(command_prefix=BOT_PREFIX, intents = intents)
 for x in commands.Cog.__subclasses__():
     bot.add_cog(x(bot))
 
